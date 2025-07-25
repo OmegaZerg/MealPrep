@@ -5,14 +5,14 @@ The purpose of this app is to help you easily create foods and meals that you ca
 
 ## App Navigation
 
-#### Days
+1. **Days**
 View your meals for today.
 
-#### Build
+2. **Build**
 Chose from your available meals to build out which meal you want for each day for the upcomming week.
 
-#### Meals
+3. **Meals**
 Chose from your available foods to build you meals.
 
-#### Foods
+4. **Foods**
 Create foods that you can use in meal.

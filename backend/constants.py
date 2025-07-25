@@ -1,7 +1,7 @@
 SAMPLE_FOODS = [
-    ("Scrambled Eggs", "Whole eggs with yolk", "Ounce", 4, 169, 13, 2, 12, "N/A"),
-    ("Toast", "1 Piece with butter", "Slice", 1, 180, 9, 21, 4, "N/A"),
-    ("Milk", "1 cup of milk", "Ounce", 8, 100, 3, 8, 9, "N/A"),
+    ("Scrambled Eggs", "Whole eggs with yolk", "Ounce", 4, 169, 13, 2, 12, None),
+    ("Toast", "1 Piece with butter", "Slice", 1, 180, 9, 21, 4, None),
+    ("Milk", "1 cup of milk", "Ounce", 8, 100, 3, 8, 9, None),
 ]
 CREATE_FOODS_TABLE = """
 CREATE TABLE foods (

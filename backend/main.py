@@ -16,6 +16,12 @@ def main():
     cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
     con.commit()
 
+#     query = """
+# DELETE FROM foods;
+# """
+#     cur.execute(query)
+#     con.commit()
+
     for row in cur.execute(SELECT_ALL_FOODS):
         print(row)
 

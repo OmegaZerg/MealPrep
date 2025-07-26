@@ -1,19 +1,19 @@
 SAMPLE_FOODS = [
-    ("Scrambled Eggs", "Whole eggs with yolk", "Ounce", 4, 169, 13, 2, 12, None),
-    ("Toast", "1 Piece with butter", "Slice", 1, 180, 9, 21, 4, None),
-    ("Milk", "1 cup of milk", "Ounce", 8, 100, 3, 8, 9, None),
-    ("Turkey Sandwhich", "2 bread, 4 ounces turkey lunchmeat, lettuce, tomato, onion, mustard", None, 1, 360, 7, 40, 36, None),
-    ("Spinach Salad", "Large salad with light italian dressing", None, 1, 140, 5, 21, 5, None),
-    ("Honeycrisp Apple", "Its an apple", "Ounce", 8, 118, 0, 32, 0, None ),
-    ("Orange Juice", "1 cup of orange juice", "Ounch", 8, 117, 1, 25, 2, None),
-    ("Banana", "Its a banana", None, 1, 114, 0, 27, 1, None),
-    ("Plain Oatmeal", "Plain old quaker oats, cooked", "Ounce", 7, 136, 2, 24, 5, None),
-    ("Pure Protein Protein Bar", "Its packed full of flavores and proteins. Deluxe Chocolate.", None, 1, 180, 5, 17, 21, None),
-    ("NY Strip Steak", "Cooked beef ultra premium first cut prime established - grilled (of course)", "Ounce", 7, 310, 12, 0, 46, None),
-    ("Cliff Bar - Chocolate Chip", "Energy Bar that helps you climb mountains..or something", None, 1, 250, 6, 43, 10, None),
-    ("Progresso Chickpea and Noodle Soup", "18.5 ounce can of soup", None, 1, 340, 7, 53, 17, None),
-    ("Collard Greens", "Steamed greens", "gram", 100, 29, 1, 6, 4, None),
-    ("Red Potato", "Plain with salf/pepper", "Ounce", 5, 138, 0, 33, 4, None),
+    ("Scrambled Eggs", "Whole eggs with yolk", "Ounce", 4, 169, 13, 2, 12),
+    ("Toast", "1 Piece with butter", "Slice", 1, 180, 9, 21, 4),
+    ("Milk", "1 cup of milk", "Ounce", 8, 100, 3, 8, 9),
+    ("Turkey Sandwhich", "2 bread, 4 ounces turkey lunchmeat, lettuce, tomato, onion, mustard", None, 1, 360, 7, 40, 36),
+    ("Spinach Salad", "Large salad with light italian dressing", None, 1, 140, 5, 21, 5),
+    ("Honeycrisp Apple", "Its an apple", "Ounce", 8, 118, 0, 32, 0),
+    ("Orange Juice", "1 cup of orange juice", "Ounch", 8, 117, 1, 25, 2),
+    ("Banana", "Its a banana", None, 1, 114, 0, 27, 1),
+    ("Plain Oatmeal", "Plain old quaker oats, cooked", "Ounce", 7, 136, 2, 24, 5),
+    ("Pure Protein Protein Bar", "Its packed full of flavores and proteins. Deluxe Chocolate.", None, 1, 180, 5, 17, 21),
+    ("NY Strip Steak", "Cooked beef ultra premium first cut prime established - grilled (of course)", "Ounce", 7, 310, 12, 0, 46),
+    ("Cliff Bar - Chocolate Chip", "Energy Bar that helps you climb mountains..or something", None, 1, 250, 6, 43, 10),
+    ("Progresso Chickpea and Noodle Soup", "18.5 ounce can of soup", None, 1, 340, 7, 53, 17),
+    ("Collard Greens", "Steamed greens", "gram", 100, 29, 1, 6, 4),
+    ("Red Potato", "Plain with salf/pepper", "Ounce", 5, 138, 0, 33, 4),
 ]
 SAMPLE_MEALS = [
     ("Lunch 1", "Sandwhich, apple, and salad", "Lunch", "Turkey Sandwhich", "Honeycrisp Apple", "Spinach Salad", None, None),
@@ -29,8 +29,7 @@ CREATE TABLE foods (
     calories INTEGER NULL,
     fat INTEGER NULL,
     carbs INTEGER NULL,
-    protein INTEGER NULL,
-    tag TEXT NULL
+    protein INTEGER NULL
 );
 """
 CREATE_MEALS_TABLE = """

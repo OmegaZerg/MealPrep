@@ -29,7 +29,7 @@ def main():
 
     #Testing foods
     try:
-        cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
+        cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
         con.commit()
     except Exception as e:
         print(f"ERROR: Unable to write to the foods table - {e}\n")
@@ -52,13 +52,44 @@ def main():
 # """
 #     cur.execute(query)
 #     con.commit()
-    print("Displaying all foods: ")
+    print("Displaying all foods rows: ")
     for row in cur.execute(SELECT_ALL_FOODS):
         print(row)
 
-    print("\nDisplaying all meals: ")
+    print("\nDisplaying all meals rows: ")
     for row in cur.execute(SELECT_ALL_MEALS):
         print(row)
+
+    #Testing: retrieve foods data
+    try:
+        data = {}
+        for i, row in enumerate(cur.execute(SELECT_ALL_FOODS)):
+            element = {}
+            for j, column in enumerate(row):
+                print(f"J: {j}, column: {column}")
+                match j:
+                    case 0:
+                        element["food_name"] = column
+                    case 1:
+                        element["description"] = column
+                    case 2:
+                        element["unit"] = column
+                    case 3:
+                        element["quantity"] = column
+                    case 4:
+                        element["calories"] = column
+                    case 5:
+                        element["fat"] = column
+                    case 6:
+                        element["carbs"] = column
+                    case 7:
+                        element["protein"] = column
+                    case _:
+                        print(f"Unknown column {j}: {column} - issue with retrieving data for foods table.")
+            data[i] = element
+    except Exception as e:
+        print(f"ERROR: Unable to read from the foods table - {e}\n")
+    print(f"Data: {data}")
 
     con.close()
 

@@ -9,23 +9,37 @@ def main():
     cur = con.cursor()
 
     if not table_exists("foods", cur):
-        cur.execute(CREATE_FOODS_TABLE)
-        con.commit()
+        try:
+            cur.execute(CREATE_FOODS_TABLE)
+            con.commit()
+        except Exception as e:
+            #TODO: Possibly create a backup database file with the tables and default data in place, and could pull from that if this fails for some reason?
+            print(f"ERROR: Unable to create the foods table - {e}\n")    
     if not table_exists("meals", cur):
-        cur.execute(CREATE_MEALS_TABLE)
-        con.commit()
+        try:
+            cur.execute(CREATE_MEALS_TABLE)
+            con.commit()
+        except Exception as e:
+            #TODO: Possibly create a backup database file with the tables and default data in place, and could pull from that if this fails for some reason?
+            print(f"ERROR: Unable to create the meals table - {e}\n")
 
-    #Even though columns are not required, we must still provide data for every column when inserting. Any values we do not have will required defaults like "N/A"
+    #Even though columns are not required/null-able, we must still provide data for every column when inserting. Any values we do not have will required defaults like null. 
     tables = cur.execute(SELECT_ALL_TABLES)
     print(tables.fetchall())
 
     #Testing foods
-    # cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
-    # con.commit()
+    try:
+        cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
+        con.commit()
+    except Exception as e:
+        print(f"ERROR: Unable to write to the foods table - {e}\n")
 
     #Testing meals
-    # cur.executemany("INSERT INTO meals VALUES (?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_MEALS)
-    # con.commit()
+    try:
+        cur.executemany("INSERT INTO meals VALUES (?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_MEALS)
+        con.commit()
+    except Exception as e:
+        print(f"ERROR: Unable to write to the meals table - {e}\n")
 
 #     query = """
 # DROP TABLE foods;

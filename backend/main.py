@@ -1,6 +1,7 @@
 import sqlite3
 from database_func import *
 from constants import *
+from datetime import datetime
 
 def main():
     print("Hello from backend!")
@@ -22,6 +23,13 @@ def main():
         except Exception as e:
             #TODO: Possibly create a backup database file with the tables and default data in place, and could pull from that if this fails for some reason?
             print(f"ERROR: Unable to create the meals table - {e}\n")
+    if not table_exists("days", cur):
+        try:
+            cur.execute(CREATE_DAYS_TABLE)
+            con.commit()
+        except Exception as e:
+            #TODO: Possibly create a backup database file with the tables and default data in place, and could pull from that if this fails for some reason?
+            print(f"ERROR: Unable to create the days table - {e}\n")
 
     #Even though columns are not required/null-able, we must still provide data for every column when inserting. Any values we do not have will required defaults like null. 
     tables = cur.execute(SELECT_ALL_TABLES)
@@ -40,6 +48,13 @@ def main():
         con.commit()
     except Exception as e:
         print(f"ERROR: Unable to write to the meals table - {e}\n")
+    
+    #Testing days
+    try:
+        cur.executemany("INSERT INTO days VALUES (?, ?, ?, ?)", SAMPLE_DAYS)
+        con.commit()
+    except Exception as e:
+        print(f"ERROR: Unable to write to the days table - {e}\n")
 
 #     query = """
 # DROP TABLE foods;
@@ -60,36 +75,44 @@ def main():
     for row in cur.execute(SELECT_ALL_MEALS):
         print(row)
 
-    #Testing: retrieve foods data
-    try:
-        data = {}
-        for i, row in enumerate(cur.execute(SELECT_ALL_FOODS)):
-            element = {}
-            for j, column in enumerate(row):
-                print(f"J: {j}, column: {column}")
-                match j:
-                    case 0:
-                        element["food_name"] = column
-                    case 1:
-                        element["description"] = column
-                    case 2:
-                        element["unit"] = column
-                    case 3:
-                        element["quantity"] = column
-                    case 4:
-                        element["calories"] = column
-                    case 5:
-                        element["fat"] = column
-                    case 6:
-                        element["carbs"] = column
-                    case 7:
-                        element["protein"] = column
-                    case _:
-                        print(f"Unknown column {j}: {column} - issue with retrieving data for foods table.")
-            data[i] = element
-    except Exception as e:
-        print(f"ERROR: Unable to read from the foods table - {e}\n")
-    print(f"Data: {data}")
+    print("\nDisplaying all days rows: ")
+    for row in cur.execute(SELECT_ALL_DAYS):
+        print(row)
+
+    # #Testing: retrieve foods data
+    # try:
+    #     data = {}
+    #     for i, row in enumerate(cur.execute(SELECT_ALL_FOODS)):
+    #         element = {}
+    #         for j, column in enumerate(row):
+    #             print(f"J: {j}, column: {column}")
+    #             match j:
+    #                 case 0:
+    #                     element["food_name"] = column
+    #                 case 1:
+    #                     element["description"] = column
+    #                 case 2:
+    #                     element["unit"] = column
+    #                 case 3:
+    #                     element["quantity"] = column
+    #                 case 4:
+    #                     element["calories"] = column
+    #                 case 5:
+    #                     element["fat"] = column
+    #                 case 6:
+    #                     element["carbs"] = column
+    #                 case 7:
+    #                     element["protein"] = column
+    #                 case _:
+    #                     print(f"Unknown column {j}: {column} - issue with retrieving data for foods table.")
+    #         data[i] = element
+    # except Exception as e:
+    #     print(f"ERROR: Unable to read from the foods table - {e}\n")
+
+    data = get_data("foods", cur)
+    print(f"Foods Data: {data}")
+    data_2 = get_data("meals", cur)
+    print(f"Meals Data: {data_2}")
 
     con.close()
 

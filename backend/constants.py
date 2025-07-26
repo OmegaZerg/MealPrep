@@ -20,9 +20,6 @@ SAMPLE_MEALS = [
     ("Breakfast 1", "Toast, scrambled eggs, and orange juice", "Breakfast", "Scrambled Eggs", "Toast", "Orange Juice", None, None),
     ("Dinner 1", "Steak, greens, and potatoes", "Dinner", "NY Strip Steak", "Collard Greens", "Red Potato", None, None),
 ]
-SAMPLE_DAYS = [
-    ("28-07-2025", "Breakfast 1", "Lunch 1", "Dinner 1"),
-]
 CREATE_FOODS_TABLE = """
 CREATE TABLE foods (
     food_name TEXT PRIMARY KEY NOT NULL,
@@ -54,7 +51,7 @@ CREATE TABLE meals (
 """
 CREATE_DAYS_TABLE = """
 CREATE TABLE days (
-    meal_date TEXT NOT NULL,
+    meal_date TEXT PRIMARY KEY NOT NULL,
     breakfast TEXT NOT NULL,
     lunch TEXT NOT NULL,
     dinner TEXT NOT NULL,

@@ -1,0 +1,32 @@
+{
+    "0": {
+        "meal_name": "Breakfast 1",
+        "description": "Toast, scrambled eggs, and orange juice",
+        "tag": "Breakfast",
+        "food_1": "Scrambled Eggs",
+        "food_2": "Toast",
+        "food_3": "Orange Juice",
+        "food_4": null,
+        "food_5": null
+    },
+    "1": {
+        "meal_name": "Dinner 1",
+        "description": "Steak, greens, and potatoes",
+        "tag": "Dinner",
+        "food_1": "NY Strip Steak",
+        "food_2": "Collard Greens",
+        "food_3": "Red Potato",
+        "food_4": null,
+        "food_5": null
+    },
+    "2": {
+        "meal_name": "Lunch 1",
+        "description": "Sandwhich, apple, and salad",
+        "tag": "Lunch",
+        "food_1": "Turkey Sandwhich",
+        "food_2": "Honeycrisp Apple",
+        "food_3": "Spinach Salad",
+        "food_4": null,
+        "food_5": null
+    }
+}

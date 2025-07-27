@@ -1,7 +1,6 @@
 import sqlite3
 from database_func import *
 from constants import *
-from datetime import date
 
 def main():
     print("Hello from backend!")

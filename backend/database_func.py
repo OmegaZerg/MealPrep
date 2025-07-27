@@ -64,6 +64,7 @@ def insert_todays_sample_meal(connection, cursor):
             print(f"ERROR: Unable to write to the days table - {e}\n")
 
 def insert_foods():
+    #TODO: make sure record doesnt exist first? Or just log error which is quicker.
     pass
 
 def insert_meals():
@@ -73,6 +74,7 @@ def insert_days():
     pass
 
 def update_foods():
+    #TODO: make sure record exists first? Or just log error which is quicker.
     pass
 
 def update_meals():

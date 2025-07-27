@@ -1,32 +1,86 @@
 {
     "0": {
-        "meal_name": "Breakfast 1",
-        "description": "Toast, scrambled eggs, and orange juice",
-        "tag": "Breakfast",
-        "food_1": "Scrambled Eggs",
-        "food_2": "Toast",
-        "food_3": "Orange Juice",
-        "food_4": null,
-        "food_5": null
-    },
-    "1": {
-        "meal_name": "Dinner 1",
-        "description": "Steak, greens, and potatoes",
-        "tag": "Dinner",
-        "food_1": "NY Strip Steak",
-        "food_2": "Collard Greens",
-        "food_3": "Red Potato",
-        "food_4": null,
-        "food_5": null
-    },
-    "2": {
         "meal_name": "Lunch 1",
         "description": "Sandwhich, apple, and salad",
         "tag": "Lunch",
-        "food_1": "Turkey Sandwhich",
-        "food_2": "Honeycrisp Apple",
-        "food_3": "Spinach Salad",
-        "food_4": null,
-        "food_5": null
+        "all_food": [
+            {
+                "food_name": "Turkey Sandwhich",
+                "calories": 360,
+                "fat": 7,
+                "carbs": 40,
+                "protein": 36
+            },
+            {
+                "food_name": "Honeycrisp Apple",
+                "calories": 118,
+                "fat": 0,
+                "carbs": 32,
+                "protein": 0
+            },
+            {
+                "food_name": "Spinach Salad",
+                "calories": 140,
+                "fat": 5,
+                "carbs": 21,
+                "protein": 5
+            }
+        ]
+    },
+    "1": {
+        "meal_name": "Breakfast 1",
+        "description": "Toast, scrambled eggs, and orange juice",
+        "tag": "Breakfast",
+        "all_food": [
+            {
+                "food_name": "Scrambled Eggs",
+                "calories": 169,
+                "fat": 13,
+                "carbs": 2,
+                "protein": 12
+            },
+            {
+                "food_name": "Toast",
+                "calories": 180,
+                "fat": 9,
+                "carbs": 21,
+                "protein": 4
+            },
+            {
+                "food_name": "Orange Juice",
+                "calories": 117,
+                "fat": 1,
+                "carbs": 25,
+                "protein": 2
+            }
+        ]
+    },
+    "2": {
+        "meal_name": "Dinner 1",
+        "description": "Steak, greens, and potatoes",
+        "tag": "Dinner",
+        "all_food": [
+            {
+                "food_name": "NY Strip Steak",
+                "calories": 310,
+                "fat": 12,
+                "carbs": 0,
+                "protein": 46
+            },
+            {
+                "food_name": "Collard Greens",
+                "calories": 29,
+                "fat": 1,
+                "carbs": 6,
+                "protein": 4
+            },
+            {
+                "food_name": "Red Potato",
+                "calories": 138,
+                "fat": 0,
+                "carbs": 33,
+                "protein": 4
+            }
+        ]
     }
 }

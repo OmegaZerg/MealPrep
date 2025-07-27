@@ -48,10 +48,16 @@ def main():
     print(f"Meals Data: {data_2}")
     data_3 = get_data("days", cur)
     print(f"Days Data: {data_3}")
-
-    write_json(data, "foods")
-    write_json(data_2, "meals")
-    write_json(data_3, "days")
+    print()
+    print("Meal Macro: ")
+    for row in cur.execute(SELECT_MEAL_MACRO):
+        print(row)
+    print("Testing get meal data:")
+    final_form = get_meals_data(cur)
+    print(final_form)
+    # write_json(data, "foods")
+    write_json(final_form, "meals")
+    # write_json(data_3, "days")
 
     con.close()
 

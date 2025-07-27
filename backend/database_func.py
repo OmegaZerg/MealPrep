@@ -168,7 +168,102 @@ def get_data(table_name: str, cursor):
             print(f"unknown table name {table_name}")
             return
     return data
-#TODO: Will require logic to ensure that when adding meals to a slot(like breakfast) that the tag for the meal is 'breakfast'. Possibly do via form validation on front end isntead.
+
+def get_meals_data(cursor):
+    #TODO: This function will be gathering data for the meals page, where we create a meal. need to join tables, to pull in the macros for each food item. Append a 'food object' to each array position. Each food object will have the food name, and the macros for each.
+    food_1 = Food(1, 2, 3, 4, 5)
+
+    try:
+        data = {}
+        for i, row in enumerate(cursor.execute(SELECT_MEAL_MACRO)):
+            element = {}
+            foods = []
+            food_group = {}
+            food_group_2 = {}
+            food_group_3 = {}
+            food_group_4 = {}
+            food_group_5 = {}
+            for j, column in enumerate(row):
+                #print(f"J: {j}, column: {column}")
+                match j:
+                    case 0:
+                        element["meal_name"] = column
+                    case 1:
+                        element["description"] = column
+                    case 2:
+                        element["tag"] = column
+                    case 3:
+                        food_group["food_name"] = column
+                    case 4:
+                        food_group["calories"] = column
+                    case 5:
+                        food_group["fat"] = column
+                    case 6:
+                        food_group["carbs"] = column
+                    case 7:
+                        food_group["protein"] = column
+                        foods.append(food_group)
+                    case 8:
+                        if not column:
+                            break
+                        food_group_2["food_name"] = column
+                    case 9:
+                        food_group_2["calories"] = column
+                    case 10:
+                        food_group_2["fat"] = column
+                    case 11:
+                        food_group_2["carbs"] = column
+                    case 12:
+                        food_group_2["protein"] = column
+                        foods.append(food_group_2)
+                    case 13:
+                        if not column:
+                            break
+                        food_group_3["food_name"] = column
+                    case 14:
+                        food_group_3["calories"] = column
+                    case 15:
+                        food_group_3["fat"] = column
+                    case 16:
+                        food_group_3["carbs"] = column
+                    case 17:
+                        food_group_3["protein"] = column
+                        foods.append(food_group_3)
+                    case 18:
+                        if not column:
+                            break
+                        food_group_4["food_name"] = column
+                    case 19:
+                        food_group_4["calories"] = column
+                    case 20:
+                        food_group_4["fat"] = column
+                    case 21:
+                        food_group_4["carbs"] = column
+                    case 22:
+                        food_group_4["protein"] = column
+                        foods.append(food_group_4)
+                    case 23:
+                        if not column:
+                            break
+                        food_group_5["food_name"] = column
+                    case 24:
+                        food_group_5["calories"] = column
+                    case 25:
+                        food_group_5["fat"] = column
+                    case 26:
+                        food_group_5["carbs"] = column
+                    case 27:
+                        food_group_5["protein"] = column
+                        foods.append(food_group_5)
+                    case _:
+                        print(f"Unknown column {j}: {column} - issue with retrieving data for meals table.")
+            element["all_food"] = foods
+            data[i] = element
+    except Exception as e:
+        print(f"ERROR: Unable to read from the meals table - {e}\n")
+    return data
+
+#TODO: Will require logic to ensure that when adding meals to a slot(like breakfast) that the tag for the meal is 'breakfast'. Possibly do via form validation on front end instead.
 def add_meal_to_day():
     pass
 

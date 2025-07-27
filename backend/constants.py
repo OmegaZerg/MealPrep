@@ -78,3 +78,21 @@ SELECT_ALL_DAYS = """
 SELECT * FROM days
 ORDER BY meal_date DESC;
 """
+SELECT_MEAL_MACRO = """
+SELECT m.meal_name, m.description, m.tag, m.food_1, f.calories, f.fat, f.carbs, f.protein, m.food_2, f2.calories, f2.fat, f2.carbs, f2.protein, m.food_3, f3.calories, f3.fat, f3.carbs, f3.protein, m.food_4, f4.calories, f4.fat, f4.carbs, f4.protein, m.food_5, f5.calories, f5.fat, f5.carbs, f5.protein FROM meals m
+INNER JOIN foods f on m.food_1 = f.food_name
+LEFT JOIN foods f2 on m.food_2 = f2.food_name
+LEFT JOIN foods f3 on m.food_3 = f3.food_name
+LEFT JOIN foods f4 on m.food_4 = f4.food_name
+LEFT JOIN foods f5 on m.food_5 = f5.food_name;
+"""
+class Food():
+    def __init__(self, name: str, calories: int, fat: int, carbs: int, protein: int):
+        self. name = name
+        self.calories = calories
+        self.fat = fat
+        self.carbs = carbs
+        self.protein = protein
+
+    def __repr__(self):
+        return f"Food -> Name: {self.name} Calories: {self.calories} Fat: {self.fat} Carbs: {self.carbs} Protein: {self.protein}"

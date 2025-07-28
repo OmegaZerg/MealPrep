@@ -8,24 +8,14 @@ def main():
     con.execute("PRAGMA foreign_keys = ON")
     cur = con.cursor()
 
-    if not table_exists("foods", cur):
-        cur.execute(CREATE_FOODS_TABLE)
-        con.commit()
-    if not table_exists("meals", cur):
-        cur.execute(CREATE_MEALS_TABLE)
-        con.commit()
+    build_tables(con, cur)
 
-    #Even though columns are not required, we must still provide data for every column when inserting. Any values we do not have will required defaults like "N/A"
+    #Even though columns are not required/null-able, we must still provide data for every column when inserting. Any values we do not have will required defaults like null. 
     tables = cur.execute(SELECT_ALL_TABLES)
     print(tables.fetchall())
 
-    #Testing foods
-    # cur.executemany("INSERT INTO foods VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_FOODS)
-    # con.commit()
-
-    #Testing meals
-    # cur.executemany("INSERT INTO meals VALUES (?, ?, ?, ?, ?, ?, ?, ?)", SAMPLE_MEALS)
-    # con.commit()
+    insert_sample_data(con, cur)
+    insert_todays_sample_meal(con, cur)
 
 #     query = """
 # DROP TABLE foods;
@@ -38,13 +28,35 @@ def main():
 # """
 #     cur.execute(query)
 #     con.commit()
-    print("Displaying all foods: ")
+    print("Displaying all foods rows: ")
     for row in cur.execute(SELECT_ALL_FOODS):
         print(row)
 
-    print("\nDisplaying all meals: ")
+    print("\nDisplaying all meals rows: ")
     for row in cur.execute(SELECT_ALL_MEALS):
         print(row)
+
+    print("\nDisplaying all days rows: ")
+    for row in cur.execute(SELECT_ALL_DAYS):
+        print(row)
+
+    print()
+    data = get_data("foods", cur)
+    print(f"Foods Data: {data}")
+    data_2 = get_data("meals", cur)
+    print(f"Meals Data: {data_2}")
+    data_3 = get_data("days", cur)
+    print(f"Days Data: {data_3}")
+    print()
+    print("Meal Macro: ")
+    for row in cur.execute(SELECT_MEAL_MACRO):
+        print(row)
+    print("Testing get meal data:")
+    final_form = get_meals_data(cur)
+    print(final_form)
+    # write_json(data, "foods")
+    write_json(final_form, "meals")
+    # write_json(data_3, "days")
 
     con.close()
 

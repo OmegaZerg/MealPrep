@@ -1,0 +1,152 @@
+{
+    "0": {
+        "food_name": "Banana",
+        "description": "Its a banana",
+        "unit": null,
+        "quantity": 1,
+        "calories": 114,
+        "fat": 0,
+        "carbs": 27,
+        "protein": 1
+    },
+    "1": {
+        "food_name": "Cliff Bar - Chocolate Chip",
+        "description": "Energy Bar that helps you climb mountains..or something",
+        "unit": null,
+        "quantity": 1,
+        "calories": 250,
+        "fat": 6,
+        "carbs": 43,
+        "protein": 10
+    },
+    "2": {
+        "food_name": "Collard Greens",
+        "description": "Steamed greens",
+        "unit": "gram",
+        "quantity": 100,
+        "calories": 29,
+        "fat": 1,
+        "carbs": 6,
+        "protein": 4
+    },
+    "3": {
+        "food_name": "Honeycrisp Apple",
+        "description": "Its an apple",
+        "unit": "Ounce",
+        "quantity": 8,
+        "calories": 118,
+        "fat": 0,
+        "carbs": 32,
+        "protein": 0
+    },
+    "4": {
+        "food_name": "Milk",
+        "description": "1 cup of milk",
+        "unit": "Ounce",
+        "quantity": 8,
+        "calories": 100,
+        "fat": 3,
+        "carbs": 8,
+        "protein": 9
+    },
+    "5": {
+        "food_name": "NY Strip Steak",
+        "description": "Cooked beef ultra premium first cut prime established - grilled (of course)",
+        "unit": "Ounce",
+        "quantity": 7,
+        "calories": 310,
+        "fat": 12,
+        "carbs": 0,
+        "protein": 46
+    },
+    "6": {
+        "food_name": "Orange Juice",
+        "description": "1 cup of orange juice",
+        "unit": "Ounch",
+        "quantity": 8,
+        "calories": 117,
+        "fat": 1,
+        "carbs": 25,
+        "protein": 2
+    },
+    "7": {
+        "food_name": "Plain Oatmeal",
+        "description": "Plain old quaker oats, cooked",
+        "unit": "Ounce",
+        "quantity": 7,
+        "calories": 136,
+        "fat": 2,
+        "carbs": 24,
+        "protein": 5
+    },
+    "8": {
+        "food_name": "Progresso Chickpea and Noodle Soup",
+        "description": "18.5 ounce can of soup",
+        "unit": null,
+        "quantity": 1,
+        "calories": 340,
+        "fat": 7,
+        "carbs": 53,
+        "protein": 17
+    },
+    "9": {
+        "food_name": "Pure Protein Protein Bar",
+        "description": "Its packed full of flavores and proteins. Deluxe Chocolate.",
+        "unit": null,
+        "quantity": 1,
+        "calories": 180,
+        "fat": 5,
+        "carbs": 17,
+        "protein": 21
+    },
+    "10": {
+        "food_name": "Red Potato",
+        "description": "Plain with salf/pepper",
+        "unit": "Ounce",
+        "quantity": 5,
+        "calories": 138,
+        "fat": 0,
+        "carbs": 33,
+        "protein": 4
+    },
+    "11": {
+        "food_name": "Scrambled Eggs",
+        "description": "Whole eggs with yolk",
+        "unit": "Ounce",
+        "quantity": 4,
+        "calories": 169,
+        "fat": 13,
+        "carbs": 2,
+        "protein": 12
+    },
+    "12": {
+        "food_name": "Spinach Salad",
+        "description": "Large salad with light italian dressing",
+        "unit": null,
+        "quantity": 1,
+        "calories": 140,
+        "fat": 5,
+        "carbs": 21,
+        "protein": 5
+    },
+    "13": {
+        "food_name": "Toast",
+        "description": "1 Piece with butter",
+        "unit": "Slice",
+        "quantity": 1,
+        "calories": 180,
+        "fat": 9,
+        "carbs": 21,
+        "protein": 4
+    },
+    "14": {
+        "food_name": "Turkey Sandwhich",
+        "description": "2 bread, 4 ounces turkey lunchmeat, lettuce, tomato, onion, mustard",
+        "unit": null,
+        "quantity": 1,
+        "calories": 360,
+        "fat": 7,
+        "carbs": 40,
+        "protein": 36
+    }
+}

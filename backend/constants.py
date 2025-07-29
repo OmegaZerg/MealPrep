@@ -1,6 +1,6 @@
 APP_PATH = "/site/app.html"
 HOST = "127.0.0.1"
-PORT = 8080
+PORT = 5000
 SAMPLE_FOODS = [
     ("Scrambled Eggs", "Whole eggs with yolk", "Ounce", 4, 169, 13, 2, 12),
     ("Toast", "1 Piece with butter", "Slice", 1, 180, 9, 21, 4),

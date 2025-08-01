@@ -11,7 +11,7 @@
 	</div>
 	<div>
 		{#if mealsWithTypes.length < 1}
-			<p>Add a meal to {title}</p>
+			<p>Add a meal to {title} by clicking on meal cards</p>
 		{:else}
 			{#each mealsWithTypes as data (data.id)}
 				<Card {data} onAddToStage={handleCardClick} />

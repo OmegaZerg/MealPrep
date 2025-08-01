@@ -72,7 +72,7 @@
 </div>
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-	<div class="grid !grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
+	<div class="[display:grid] grid-cols-1 justify-items-center gap-4 md:grid-cols-2 xl:grid-cols-3">
 		{#each filteredMeals as meal}
 			<div class="w-96">
 				<Card data={meal} onAddToStage={handleAddToStage} />

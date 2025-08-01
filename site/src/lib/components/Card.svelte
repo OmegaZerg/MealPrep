@@ -5,9 +5,9 @@
 		data: CardData;
 		onAddToStage(meal: CardData): (item: CardData) => void;
 	};
+  
 	let { data, onAddToStage } = $props();
 
-	console.log(data);
 </script>
 
 <button

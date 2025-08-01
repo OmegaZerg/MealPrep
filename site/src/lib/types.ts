@@ -1,8 +1,9 @@
 export interface CardData {
+  id?: number;
 	name: string;
 	description: string;
-	quantity: number;
-	unit: string;
+	quantity?: number;
+	unit?: string;
 	type: 'food' | 'meal';
 	tag?: 'breakfast' | 'lunch' | 'dinner';
 	ingredients?: string[];

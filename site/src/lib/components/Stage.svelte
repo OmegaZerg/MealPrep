@@ -1,6 +1,6 @@
 <script lang="ts">
 	import StageColumn from '$lib/components/StageColumn.svelte';
-
+  
 	const timeSlots = ['Breakfast', 'Lunch', 'Dinner'];
 	let { breakfasts, lunches, dinners, handleCardClick } = $props();
   const timeSlotData = {

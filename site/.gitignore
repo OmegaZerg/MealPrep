@@ -1,5 +1,5 @@
 node_modules
-
+/src/lib/data/test.ts
 # Output
 .output
 .vercel

@@ -12,7 +12,7 @@
 
 <input class="mx-5" type="date" />
 
-<section class="grid-col-1 md:grid grid-cols-3">
+<section class="grid-col-1 lg:grid grid-cols-3 xl: px-4">
 	{#each timeSlots as timeSlot}
 		<StageColumn title={timeSlot} meals={timeSlotData[timeSlot]} {handleCardClick}/>
 	{/each}

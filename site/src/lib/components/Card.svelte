@@ -5,7 +5,7 @@
 		data: CardData;
 		onAddToStage(meal: CardData): (item: CardData) => void;
 	};
-  
+
 	let { data, onAddToStage } = $props();
 
 </script>
@@ -15,7 +15,7 @@
 	onclick={() => onAddToStage(data)}
 >
 	<article
-		class="flex aspect-[1.33] h-full flex-col !gap-0 overflow-hidden rounded-lg p-3 shadow-lg"
+		class="flex aspect-[1.33] h-full flex-col !gap-0 overflow-hidden rounded-lg p-3 shadow-lg !bg-blue-950"
 	>
 		<h2 class="text-center !text-xl font-bold">{data.name}</h2>
 		<div class="flex flex-1 gap-4 overflow-hidden">

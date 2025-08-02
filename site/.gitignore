@@ -1,5 +1,9 @@
 node_modules
+<<<<<<< HEAD
 
+=======
+/src/lib/data/test.ts
+>>>>>>> jon
 # Output
 .output
 .vercel

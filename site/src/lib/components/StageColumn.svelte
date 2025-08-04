@@ -1,8 +1,14 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
+	import type { CardData } from '$lib/types';
+	type Props = {
+		Breakfast: CardData;
+		Lunch: CardData;
+		Dinner: CardData;
+	};
 
 	let { title, meals, handleCardClick } = $props();
-	let mealsWithTypes = $derived(meals.map((meal) => ({ ...meal, type: 'meal' as const })));
+	let mealsWithTypes = $derived(meals.map((meal: CardData) => ({ ...meal, type: 'meal' as const })));
 </script>
 
 <div class="mx-1 flex h-full flex-col rounded-lg bg-slate-200 p-4">

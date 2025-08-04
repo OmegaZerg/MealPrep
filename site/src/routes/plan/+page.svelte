@@ -56,9 +56,13 @@
 </script>
 
 <Stage {breakfasts} {lunches} {dinners} handleCardClick={handleAddToStage} />
+<div class="mx-auto flex max-w-3xl justify-items-center gap-1">
+	<input class="max-h-12 flex-9/12" type="date" />
+	<button class="max-h-12 flex-2/12">Submit</button>
+</div>
 
-<div class="mx-5 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6">
-	<button onclick={() => (mealsFilter = 'all')}>All</button>
+<div class="mx-auto grid max-w-3xl grid-cols-1 justify-center md:grid-cols-4 lg:grid-cols-6">
+	<button class="" onclick={() => (mealsFilter = 'all')}>All</button>
 	<button onclick={() => (mealsFilter = 'breakfast')}>Breakfast</button>
 	<button onclick={() => (mealsFilter = 'lunch')}>Lunch</button>
 	<button onclick={() => (mealsFilter = 'dinner')}>Dinner</button>
